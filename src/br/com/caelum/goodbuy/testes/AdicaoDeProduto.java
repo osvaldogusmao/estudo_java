@@ -14,9 +14,9 @@ public class AdicaoDeProduto {
 
 	private static Produto criaProduto() {
 		Produto produto = new Produto();
-		produto.setNome("Produto Teste 1");
-		produto.setDescricao("Produto para teste");
-		produto.setPreco(12.50);
+		produto.setNome("Produto Teste 2");
+		produto.setDescricao("Produto para teste 2");
+		produto.setPreco(16.50);
 		return produto;
 	}
 }

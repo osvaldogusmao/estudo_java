@@ -7,7 +7,9 @@ import org.hibernate.Transaction;
 
 import br.com.caelum.goodbuy.infra.CriadorDeSession;
 import br.com.caelum.goodbuy.modelo.Produto;
+import br.com.caelum.vraptor.ioc.Component;
 
+@Component
 public class ProdutoDao {
 
 	private Session session;
