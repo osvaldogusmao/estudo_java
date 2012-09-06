@@ -1,5 +1,7 @@
 package br.com.caelum.goodbuy.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -41,4 +43,8 @@ public class ProdutoDao {
 		return produto;
 	}
 
+	
+	public List<Produto> listaTudo(){
+		return this.session.createCriteria(Produto.class).list();
+	}
 }
