@@ -6,6 +6,8 @@ import java.util.List;
 import br.com.caelum.goodbuy.modelo.Produto;
 import br.com.caelum.vraptor.Resource;
 
+//Teste
+
 @Resource
 public class Mundo {
 
