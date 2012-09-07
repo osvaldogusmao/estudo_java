@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.validator.NotNull;
+
 
 
 @Entity
@@ -13,6 +16,7 @@ public class Produto {
 	@GeneratedValue
 	private Long id;
 
+	@NotNull
 	private String nome;
 
 	private String descricao;
