@@ -7,6 +7,12 @@ import br.com.caelum.goodbuy.modelo.Produto;
 import br.com.caelum.vraptor.Resource;
 
 //Teste
+/**
+ * 
+ * Classe Mundo.java
+ * Apenas para teste - Osvaldo Gusm‹o
+ * 
+ * */
 
 @Resource
 public class Mundo {

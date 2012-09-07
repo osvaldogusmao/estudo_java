@@ -5,7 +5,6 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import br.com.caelum.goodbuy.infra.CriadorDeSession;
 import br.com.caelum.goodbuy.modelo.Produto;
 import br.com.caelum.vraptor.ioc.Component;
 
@@ -14,8 +13,8 @@ public class ProdutoDao {
 
 	private Session session;
 
-	public ProdutoDao() {
-		this.session = CriadorDeSession.getSession();
+	public ProdutoDao(Session session) {
+		this.session = session;
 	}
 
 	public void salva(Produto produto) {
@@ -29,8 +28,8 @@ public class ProdutoDao {
 		session.update(produto);
 		transaction.commit();
 	}
-	
-	public void remove(Produto produto){
+
+	public void remove(Produto produto) {
 		Transaction transaction = session.beginTransaction();
 		session.delete(produto);
 		transaction.commit();
@@ -45,8 +44,7 @@ public class ProdutoDao {
 		return produto;
 	}
 
-	
-	public List<Produto> listaTudo(){
+	public List<Produto> listaTudo() {
 		return this.session.createCriteria(Produto.class).list();
 	}
 }
