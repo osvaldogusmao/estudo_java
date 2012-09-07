@@ -1,4 +1,4 @@
-<form action="adiciona" method="post">
+<form action="altera" method="post">
 	<fieldset>
 		<legend>Alterando Produto</legend>
 
