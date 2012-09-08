@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 
 import br.com.caelum.goodbuy.modelo.Produto;
 import br.com.caelum.vraptor.ioc.Component;
@@ -46,5 +48,13 @@ public class ProdutoDao {
 
 	public List<Produto> listaTudo() {
 		return this.session.createCriteria(Produto.class).list();
+	}
+
+	public List<Produto> busca(String nome) {
+		return this.session.createCriteria(Produto.class).add(Restrictions.ilike("nome", nome, MatchMode.ANYWHERE)).list();
+	}
+
+	public void recarrega(Produto produto) {
+		this.session.refresh(produto);
 	}
 }

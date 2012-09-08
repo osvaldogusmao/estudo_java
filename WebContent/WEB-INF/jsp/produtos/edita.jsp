@@ -1,4 +1,4 @@
-<form action="altera" method="post">
+<form action="<c:url value="/produtos/${produto.id }"/>" method="post">
 	<fieldset>
 		<legend>Alterando Produto</legend>
 
@@ -13,6 +13,6 @@
 		<label for="preco">Preço:</label> 
 		<input type="text" id="preco" name="produto.preco" value="${produto.preco }"> <br />
 		
-		<button type="submit">Cadastrar</button>
+		<button type="submit" name="_method" value="PUT">Alterar</button>
 	</fieldset>
 </form>
