@@ -17,6 +17,6 @@
 
 		<!-- entidades -->
 		<mapping class="br.com.caelum.goodbuy.modelo.Produto" />
-		
+		<mapping class="br.com.caelum.goodbuy.modelo.Usuario" />
 	</session-factory>
 </hibernate-configuration>
