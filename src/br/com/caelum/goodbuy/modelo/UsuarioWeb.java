@@ -1,5 +1,6 @@
 package br.com.caelum.goodbuy.modelo;
 
+import br.com.caelum.goodbuy.enums.TipoUsuarioEnum;
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.caelum.vraptor.ioc.SessionScoped;
 
@@ -17,6 +18,10 @@ public class UsuarioWeb {
 		return logado.getNome();
 	}
 
+	public TipoUsuarioEnum getTipoUsuario(){
+		return logado.getTipoUsuario();
+	}
+	
 	public boolean isLogado() {
 		return logado != null;
 	}

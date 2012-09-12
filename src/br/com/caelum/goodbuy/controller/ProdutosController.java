@@ -3,6 +3,7 @@ package br.com.caelum.goodbuy.controller;
 import java.util.List;
 
 import br.com.caelum.goodbuy.dao.ProdutoDao;
+import br.com.caelum.goodbuy.interceptor.annotations.Restrito;
 import br.com.caelum.goodbuy.modelo.Produto;
 import br.com.caelum.vraptor.Delete;
 import br.com.caelum.vraptor.Get;
@@ -26,12 +27,13 @@ public class ProdutosController {
 		this.result = result;
 		this.validator = validator;
 	}
-
+	
 	@Get("/produtos")
 	public List<Produto> lista() {
 		return dao.listaTudo();
 	}
 
+	@Restrito
 	@Post("/produtos")
 	public void adiciona(Produto produto) {
 		validaFormulario(produto);
@@ -39,16 +41,19 @@ public class ProdutosController {
 		result.redirectTo(this).lista();
 	}
 
+	@Restrito
 	@Get("/produtos/novo")
 	public void formulario() {
 
 	}
 
+	@Restrito
 	@Get("/produtos/{id}")
 	public Produto edita(Long id) {
 		return dao.carrega(id);
 	}
 
+	@Restrito
 	@Put("/produtos/{produto.id}")
 	public void altera(Produto produto) {
 		validaFormulario(produto);
@@ -56,6 +61,7 @@ public class ProdutosController {
 		result.redirectTo(this).lista();
 	}
 
+	@Restrito
 	@Delete("/produtos/{id}")
 	public void remove(Long id) {
 		Produto produto = dao.carrega(id);

@@ -3,6 +3,7 @@ package br.com.caelum.goodbuy.modelo;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import br.com.caelum.goodbuy.enums.TipoUsuarioEnum;
 
 @Entity
 public class Usuario {
@@ -13,6 +14,8 @@ public class Usuario {
 	private String senha;
 
 	private String nome;
+
+	private TipoUsuarioEnum tipoUsuario;
 
 	public String getLogin() {
 		return login;
@@ -36,6 +39,14 @@ public class Usuario {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public TipoUsuarioEnum getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(TipoUsuarioEnum tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 
 }
